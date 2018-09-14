@@ -51,3 +51,9 @@
 .my-content .category-right .brand-list li p {
   text-align: center;
 }
+.noresult {
+  padding: 10px;
+  font-size: 14px;
+  color: red;
+  text-align: center;
+}
