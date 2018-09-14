@@ -44,4 +44,14 @@ $(function(){
         $('#history-box').html(html);
     }
 
+
+    //实现清空搜索历史
+    //1.给元素添加点击事件
+    //2.清空页面中的数据,清空本地存储数据
+
+    $('#clearBtn').on('click',function(){
+        $('#history-box').html("");
+
+        localStorage.removeItem("keyArr");
+    });
 });
