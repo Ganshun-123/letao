@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="assets/mui/css/mui.min.css">
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/category.css">
+	<link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
 	<script src="assets/mui/js/mui.min.js"></script>
 	<script src="assets/zepto/zepto.min.js"></script>
 	<script src="./js/category.js"></script>
@@ -15,7 +16,7 @@
 <body>
 <header class="mui-bar mui-bar-nav my-header">
 	<h1 class="mui-title">乐淘云购</h1>
-	<a class="mui-icon mui-icon-search mui-pull-right"></a>
+	<a href="search.html" class="mui-icon mui-icon-search mui-pull-right"></a>
 	<a class="mui-icon-search mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 </header>
 <nav class="mui-bar mui-bar-tab my-footer">
@@ -28,7 +29,7 @@
 		<span class="mui-tab-label">分类</span>
 	</a>
 	<a class="mui-tab-item" href="cart.html">
-		<span class="mui-icon iconfont icon-daohanggouwuche"></span>
+		<span class="mui-icon fa fa-shopping-cart"></span>
 		<span class="mui-tab-label">购物车</span>
 	</a>
 	<a class="mui-tab-item" href="user.html">
@@ -40,31 +41,8 @@
 	<div class="category-left">
 		<div class="mui-scroll-wrapper">
 			<div class="mui-scroll">
-				<div class="links">
-					<a href="#" class="active">运动馆</a>
-					<a href="#">男士馆</a>
-					<a href="#">女士馆</a>
-					<a href="#">运动馆</a>
-					<a href="#">男士馆</a>
-					<a href="#">女士馆</a>
-					<a href="#">运动馆</a>
-					<a href="#">男士馆</a>
-					<a href="#">女士馆</a>
-					<a href="#">运动馆</a>
-					<a href="#">男士馆</a>
-					<a href="#">女士馆</a>
-					<a href="#">运动馆</a>
-					<a href="#">男士馆</a>
-					<a href="#">女士馆</a>
-					<a href="#">运动馆</a>
-					<a href="#">男士馆</a>
-					<a href="#">女士馆</a>
-					<a href="#">运动馆</a>
-					<a href="#">男士馆</a>
-					<a href="#">女士馆</a>
-					<a href="#">运动馆</a>
-					<a href="#">男士馆</a>
-					<a href="#">女士馆</a>
+				<div class="links" id="links">
+
 				</div>
 			</div>
 		</div>
@@ -73,40 +51,33 @@
 		<div class="mui-scroll-wrapper">
 			<div class="mui-scroll">
 				<ul class="brand-list mui-clearfix">
-					<li>
-						<a href="#">
-							<img src="./images/brand1.png" alt=""/>
-							<p>耐克</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="./images/brand2.png" alt=""/>
-							<p>耐克</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="./images/brand3.png" alt=""/>
-							<p>耐克</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="./images/brand4.png" alt=""/>
-							<p>耐克</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="./images/brand5.png" alt=""/>
-							<p>耐克</p>
-						</a>
-					</li>
+
 				</ul>
 			</div>
 		</div>
 	</div>
 </div>
+<script id="category-first" type="text/template">
+	<% for(var i=0;i<result.length;i++){ %>
+	<a
+			href="#"
+			data-id="<%=result[i].id %>"><%=result[i].categoryName %></a>
+	<% } %>
+</script>
+
+<script id="category-second" type="text/template">
+	<% for(var i=0;i<rows.length;i++){ %>
+	<li>
+		<a href="#">
+			<img src="<%=rows[i].brandLogo %>">
+			<p><%=rows[i].brandName %></p>
+		</a>
+	</li>
+	<% } %>
+
+	<% if(!rows.length){ %>
+	<div class="noresult">暂无数据</div>
+	<% } %>
+</script>
 </body>
 </html>
