@@ -1,10 +1,16 @@
+html {
+  background-color: #fff;
+}
+.mui-content {
+  background-color: #fff;
+}
 .my-header {
   background-color: #006699;
 }
 .my-header .mui-title {
   color: #fff;
 }
-.my-header .mui-icon-search {
+.my-header .mui-icon {
   color: #fff;
 }
 .my-footer {
