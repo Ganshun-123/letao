@@ -16,3 +16,9 @@
 .mui-content .mui-btn {
   width: 120px;
 }
+.mui-content .mui-input-row label {
+  font-size: 14px;
+}
+.mui-content input {
+  font-size: 14px;
+}
