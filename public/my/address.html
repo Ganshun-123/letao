@@ -49,7 +49,7 @@
     </a>
 </nav>
 <div class="mui-content">
-    <a href="" class="addAddress">添加收货地址</a>
+    <a href="addAddress.html?isEdit=0" class="addAddress">添加收货地址</a>
     <ul class="mui-table-view" id="address-box">
 
     </ul>
@@ -57,15 +57,17 @@
 <script type="text/html" id="addressTpl">
     {{each result}}
     <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-            <div class="mui-media-body">
-                邮编: {{$value.postCode}} 收货人:{{$value.recipients}}
-                <p class='mui-ellipsis'>
-                    {{$value.address}}
-                    {{$value.addressDetail}}
-                </p>
-            </div>
-        </a>
+        <div class="mui-slider-right mui-disabled">
+            <a href="javascript:;" class="mui-btn mui-btn-blue edit-btn" data-id="{{$value.id}}">编辑</a>
+            <a href="javascript:;" class="mui-btn mui-btn-red delete-btn" data-id="{{$value.id}}">删除</a>
+        </div>
+        <div class="mui-media-body mui-slider-handle">
+            邮编: {{$value.postCode}} 收货人:{{$value.recipients}}
+            <p class='mui-ellipsis'>
+                {{$value.address}}
+                {{$value.addressDetail}}
+            </p>
+        </div>
     </li>
     {{/each}}
 </script>
